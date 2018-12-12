@@ -10,27 +10,37 @@
             </div>
             @include('common.error')
             <div class="panel-boby">
-                <form action="{{route('users.update',$user->id)}}" method="POST" accept-charset="UTF-8">
+                <form action="{{route('users.update',$user->id)}}" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
                     <input type="hidden" name="_method" value="PUT">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label for="name-field">用户名</label>
-                        <input type="text" class="form-control" name="name" id="name-field" 
+                        <input type="text" class="form-control" name="name" id="name-field"
                                value="{{old('name',$user->name)}}">
-                    </div>   
-                    
+                    </div>
+
                     <div class="form-group">
                         <label for="email-field">邮箱</label>
-                        <input type="text" class="form-control" name="email" id="email-field" 
+                        <input type="text" class="form-control" name="email" id="email-field"
                                value="{{old('email',$user->email)}}">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="introduction-field">个人简介</label>
                         <textarea name="introduction" id="introduction-field" class="form-control" rows="3">
                             {{old('introduction',$user->introduction)}}
                         </textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label for="" class="avatar-label">用户头像</label>
+                        <input type="file" name="avatar">
+                        @if($user->avatar)
+                            <br>
+                            <img class="thumbnail" width="200" src="{{$user->avatar}}" alt="">
+                        @endif
+                    </div>
+
                     <div class="well well-sm">
                         <button type="submit" class="btn btn-primary">保存</button>
                     </div>

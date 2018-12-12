@@ -8,7 +8,7 @@
                     <div class="media">
                         <div align="center">
                             <img class="thumbnail img-responsive"
-                                 src="http://iconfont.alicdn.com/t/1531270182533.jpg@100h_100w.jpg"
+                                 src="{{ $user->avatar }}"
                                  alt="" width="300px" height="300px">
                         </div>
                         <div class="media-boby">
