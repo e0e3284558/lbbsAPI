@@ -7,6 +7,7 @@
     <title>@yield('title','LaraBBS')-Laravel 进阶教程</title>
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    @yield('styles')
 </head>
 <boby>
     <div id="app" class="{{route_class()}}-page">
@@ -18,6 +19,7 @@
         @include('layouts._footer')
     </div>
     <script src="{{asset('js/app.js')}}"></script>
+    @yield('scripts')
 </boby>
 
 
