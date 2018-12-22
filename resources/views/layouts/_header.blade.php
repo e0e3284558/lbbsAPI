@@ -58,7 +58,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             @can('manage_contents')
-                                <li><a href="{{url('administrator.uri')}}">
+                                <li><a href="{{url('admin')}}">
                                         <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
                                         管理后台
                                     </a>
