@@ -17,9 +17,6 @@ class User extends Authenticatable
         notify as protected laravelNotify;
     }
 
-    protected $fillable=[
-        'name','phone','email','password','introduction','avatar'
-    ];
 
     public function notify($instance)
     {
@@ -37,7 +34,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','introduction','avatar'
+        'name','phone','email','password','introduction','avatar'
     ];
 
     /**
