@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/','TopicsController@index')->name('root');
 
 // Authentication Routes...
