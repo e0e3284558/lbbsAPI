@@ -6,7 +6,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
-    'middleware' => ['serializer:array','bindings']
+    'middleware' => ['serializer:array', 'bindings']
 ], function ($api) {
     $api->group([
         'middleware' => 'api.throttle',
@@ -57,6 +57,9 @@ $api->version('v1', [
             // 修改话题
             $api->patch('topics/{topic}', 'TopicsController@update')
                 ->name('api.topics.update');
+            // 删除话题
+            $api->delete('topics/{topic}', 'TopicsController@destroy')
+                ->name('api.topics.destroy');
         });
     });
 });
